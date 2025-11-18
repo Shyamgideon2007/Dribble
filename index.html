@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ProShop - E-Commerce Website</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .hero {
+      background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+      padding: 60px 0 40px 0;
+      text-align: center;
+    }
+    .features .col {
+      transition: transform 0.2s;
+    }
+    .features .col:hover {
+      transform: translateY(-10px) scale(1.03);
+    }
+    .card-product {
+      border: none;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .card-product:hover {
+      box-shadow: 0 6px 20px 0 rgba(0,0,0,0.09);
+    }
+    .badge-sale {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #e3342f;
+      color: white;
+      font-size: 0.9em;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .modal-img-thumb {
+      height: 60px;
+      width: 80px;
+      object-fit: cover;
+      margin-right: 8px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      cursor: pointer;
+    }
+    .footer-link {
+      color: #adcbe3 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ProShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Cart <span class="badge bg-warning">0</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Banner -->
+<div class="hero">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Discover Quality Products, Shop with Confidence</h1>
+    <p class="lead mt-4">Your one-stop destination for the latest trends, top electronics, and much more—at unbeatable prices.</p>
+    <a href="#products" class="btn btn-lg btn-success px-5 mt-3 shadow-sm">Shop Now</a>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5 features">
+  <div class="row text-center g-4">
+    <div class="col">
+      <div class="p-4 bg-light rounded">
+        <img src="https://cdn-icons-png.flaticon.com/512/879/879790.png" height="48" alt="delivery" />
+        <h5 class="mt-3 mb-2">Fast Shipping</h5>
+        <p class="mb-0 small">Free & express delivery on all orders</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 bg-light rounded">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" height="48" alt="secure-payment" />
+        <h5 class="mt-3 mb-2">Secure Payment</h5>
+        <p class="mb-0 small">100% safe & secure checkout</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-4 bg-light rounded">
+        <img src="https://cdn-icons-png.flaticon.com/512/1798/1798449.png" height="48" alt="support" />
+        <h5 class="mt-3 mb-2">24/7 Support</h5>
+        <p class="mb-0 small">Talk to us anytime, anywhere</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Section -->
+<div class="container my-5" id="products">
+  <h2 class="mb-4 fw-bold text-center">Trending Products</h2>
+  <div class="row g-4">
+    <!-- Product Card 1 -->
+    <div class="col-md-4">
+      <div class="card card-product h-100 position-relative" data-bs-toggle="modal" data-bs-target="#productModal1">
+        <span class="badge-sale">-20%</span>
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/07/sv04/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers" class="card-img-top" alt="Sneakers">
+        <div class="card-body">
+          <h5 class="card-title">Palermo Classic Comfort Sneakers</h5>
+          <span class="fw-bold text-primary">₹5,599 <del class="text-muted">₹6,999</del></span>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="col-md-4">
+      <div class="card card-product h-100 position-relative" data-bs-toggle="modal" data-bs-target="#productModal2">
+        <img src="https://m.media-amazon.com/images/I/612RBfJgF7L._SX679_.jpg" class="card-img-top" alt="Smart Watch">
+        <div class="card-body">
+          <h5 class="card-title">Modern Smart Watch</h5>
+          <span class="fw-bold text-primary">₹2,499 <del class="text-muted">₹3,000</del></span>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="col-md-4">
+      <div class="card card-product h-100 position-relative" data-bs-toggle="modal" data-bs-target="#productModal3">
+        <img src="https://m.media-amazon.com/images/I/71QFjliR-ML._SX679_.jpg" class="card-img-top" alt="Earbuds">
+        <div class="card-body">
+          <h5 class="card-title">Apple AirPods Max Wireless Over-Ear Headphones</h5>
+          <span class="fw-bold text-primary">₹57,900 <del class="text-muted">₹60,000</del></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Modal 1 -->
+<div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row g-0">
+        <!-- Images Section -->
+        <div class="col-md-7 p-4">
+          <div class="mb-3">
+            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/07/sv01/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers" class="img-fluid rounded" alt="Sneaker Main">
+          </div>
+          <div class="d-flex">
+            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/07/mod02/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers" class="modal-img-thumb" alt="Sneaker Thumb">
+            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/07/mod01/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers" class="modal-img-thumb" alt="Sneaker Thumb">
+            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/402693/07/sv02/fnd/IND/fmt/png/Palermo-Classic-Comfort-Low-Boot-Sneakers" class="modal-img-thumb" alt="Sneaker Thumb">
+          </div>
+        </div>
+        <!-- Details Section -->
+        <div class="col-md-5 p-4">
+          <h4 class="fw-bold mb-2" id="productModalLabel1">Palermo Classic Comfort Low Boot Sneakers</h4>
+          <div class="mb-2">
+            <span class="fs-3 fw-bold text-danger">₹5,599</span>
+            <span class="fs-6 text-muted ms-2"><del>₹6,999</del></span>
+            <span class="badge bg-success ms-2">-20%</span>
+          </div>
+          <p>Color: Hyperlink Blue-Flame Flicker-Gum</p>
+          <div class="mb-3">
+            Colors:
+            <span class="btn btn-sm btn-outline-primary">Blue</span>
+            <span class="btn btn-sm btn-outline-success">Green</span>
+            <span class="btn btn-sm btn-outline-warning">Yellow</span>
+          </div>
+          <div class="mb-3">
+            <strong>Size:</strong>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <button class="btn btn-outline-dark btn-sm">UK 3</button>
+              <button class="btn btn-outline-dark btn-sm">UK 4</button>
+              <button class="btn btn-outline-dark btn-sm">UK 5</button>
+              <button class="btn btn-outline-dark btn-sm">UK 6</button>
+              <button class="btn btn-outline-dark btn-sm">UK 7</button>
+              <button class="btn btn-outline-dark btn-sm">UK 8</button>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-success w-100 mb-2">Add to Cart</button>
+          <div class="mt-2 text-success">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561313.png" height="20" alt="truck" /> This item qualifies for free shipping!
+          </div>
+          <hr>
+          <p><strong>Description:</strong> Classic sneakers designed for comfort and style. Perfect for casual outings and sporty look.</p>
+        </div>
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Product Modal 2 -->
+<div class="modal fade" id="productModal2" tabindex="-1" aria-labelledby="productModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row g-0">
+        <div class="col-md-7 p-4">
+          <div class="mb-3">
+            <img src="https://m.media-amazon.com/images/I/81xGxcB7T+L._SX679_.jpg" class="img-fluid rounded" alt="Smart Watch Main">
+          </div>
+          <div class="d-flex">
+            <img src="https://m.media-amazon.com/images/I/716-1I4qJYL._SX679_.jpg" class="modal-img-thumb" alt="Smart Watch Thumb">
+            <img src="https://m.media-amazon.com/images/I/81XcGisd7aL._SX679_.j
+            3pg" class="modal-img-thumb" alt="Smart Watch Thumb">
+            <img src="https://m.media-amazon.com/images/I/61aYF+sGPBL._SX679_.jpg" class="modal-img-thumb" alt="Smart Watch Thumb">
+          </div>
+        </div>
+        <div class="col-md-5 p-4">
+          <h4 class="fw-bold mb-2" id="productModalLabel2">Modern Smart Watch</h4>
+          <div class="mb-2">
+            <span class="fs-3 fw-bold text-danger">₹2,499</span>
+            <span class="fs-6 text-muted ms-2"><del>₹3,000</del></span>
+          </div>
+          <p>Color: Silver with black strap</p>
+          <div class="mb-3">
+            Colors:
+            <span class="btn btn-sm btn-outline-dark">Black</span>
+            <span class="btn btn-sm btn-outline-secondary">Silver</span>
+            <span class="btn btn-sm btn-outline-primary">Blue</span>
+          </div>
+          <div class="mb-3">
+            <strong>Size:</strong>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <button class="btn btn-outline-dark btn-sm">S</button>
+              <button class="btn btn-outline-dark btn-sm">M</button>
+              <button class="btn btn-outline-dark btn-sm">L</button>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-success w-100 mb-2">Add to Cart</button>
+          <div class="mt-2 text-success">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561313.png" height="20" alt="truck" /> Free shipping available!
+          </div>
+          <hr>
+          <p><strong>Description:</strong> Track your fitness, calls, and notifications with this stylish smart watch.</p>
+        </div>
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Product Modal 3 -->
+<div class="modal fade" id="productModal3" tabindex="-1" aria-labelledby="productModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row g-0">
+        <div class="col-md-7 p-4">
+          <div class="mb-3">
+            <img src="https://m.media-amazon.com/images/I/71R62N5phFL._SX679_.jpg" class="img-fluid rounded" alt="Earbuds Main">
+          </div>
+          <div class="d-flex">
+            <img src="https://m.media-amazon.com/images/I/714a26vSiDL._SX679_.jpg" class="modal-img-thumb" alt="Earbuds Thumb">
+            <img src="https://m.media-amazon.com/images/I/713vj053ZTL._SX679_.jpg" class="modal-img-thumb" alt="Earbuds Thumb">
+            <img src="https://m.media-amazon.com/images/I/61Bb9hBUEDL._SX679_.jpg" class="modal-img-thumb" alt="Earbuds Thumb">
+          </div>
+        </div>
+        <div class="col-md-5 p-4">
+          <h4 class="fw-bold mb-2" id="productModalLabel3">Wireless Earbuds</h4>
+          <div class="mb-2">
+            <span class="fs-3 fw-bold text-danger">₹57,900</span>
+            <span class="fs-6 text-muted ms-2"><del>₹60,000</del></span>
+          </div>
+          <p>Color: Black</p>
+          <div class="mb-3">
+            Colors:
+            <span class="btn btn-sm btn-outline-dark">Black</span>
+            <span class="btn btn-sm btn-outline-secondary">Grey</span>
+            <span class="btn btn-sm btn-outline-primary">White</span>
+          </div>
+          <div class="mb-3">
+            <strong>Size:</strong>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <button class="btn btn-outline-dark btn-sm">Universal Fit</button>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-success w-100 mb-2">Add to Cart</button>
+          <div class="mt-2 text-success">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561313.png" height="20" alt="truck" /> Free shipping available!
+          </div>
+          <hr>
+          <p><strong>Description:</strong> Crisp audio quality and noise cancellation with these stylish wireless earbuds.</p>
+        </div>
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="bg-light py-5" id="testimonials">
+  <div class="container">
+    <h3 class="fw-bold text-center mb-4">What Our Customers Say</h3>
+    <div class="row gx-5">
+      <div class="col-md-6 mb-4">
+        <div class="p-4 rounded bg-white shadow-sm testimonial">
+          "Loved the fast delivery and product quality! Will definitely shop again."
+          <br><span class="fw-bold">- Priya, Mumbai</span>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="p-4 rounded bg-white shadow-sm testimonial">
+          "Excellent customer support. The shopping process was seamless."
+          <br><span class="fw-bold">- Arjun, Chennai</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-primary text-light py-4 mt-5">
+  <div class="container text-center">
+    <div class="mb-2">
+      <a href="#" class="footer-link me-3">Privacy Policy</a>
+      <a href="#" class="footer-link me-3">Terms of Service</a>
+      <a href="#" class="footer-link">Contact Us</a>
+    </div>
+    &copy; 2025 ProShop. Crafted with Bootstrap.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
